@@ -1,0 +1,98 @@
+---
+const cards = [
+  {
+    title: "Portafolio",
+    description: "Explora mis proyectos destacados.",
+    href: "https://portafolio-ricardo-escobar.netlify.app/",
+  },
+  {
+    title: "E-commerce",
+    description: "Compra servicios de desarrollo personalizado.",
+    href: "https://ricardoescobar.gumroad.com/l/desarrollador",
+  },
+  {
+    title: "Web",
+    description: "Asesoria tegnologica con personal calificado.",
+    href: "/web",
+  },
+];
+---
+
+<div class="cards-container">
+  {cards.map((card) => (
+    <a href={card.href} class="card">
+      <div class="card-content">
+        <div>
+          <h3 class="card-title">{card.title}</h3>
+          <p class="card-description">{card.description}</p>
+        </div>
+        <div class="card-icon">➔</div>
+      </div>
+    </a>
+  ))}
+</div>
+
+<style>
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.card {
+  background: transparent;
+  border: 1px solid #000;
+  border-radius: 8px;
+  padding: 1rem;
+  text-decoration: none;
+  color: #0c0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+  transition: background-color 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease, border-color 0.5s ease, color 0.5s ease;
+}
+
+.card:hover {
+  background: rgba(0, 0, 0, 0.963);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-color: #b5b0b0;
+  color: white;
+}
+
+.card:hover .card-description,
+.card:hover .card-title,
+.card:hover .card-icon {
+  color: white;
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.card-description {
+  font-size: 0.875rem;
+  color: #555;
+  margin: 0;
+  transition: color 0.5s ease;
+}
+
+.card-icon {
+  font-size: 1.5rem;
+  color: #333;
+  transition: color 0.5s ease;
+}
+
+
+</style>
